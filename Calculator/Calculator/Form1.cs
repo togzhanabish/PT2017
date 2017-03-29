@@ -24,31 +24,43 @@ namespace Calculator
 
         private void numbers_click(object sender, EventArgs e)
         {
-            if (display.Text == "0" ) // очищаем textbox если там стоит 0 в начале
+            /*Button btn = sender as Button;
+            if (display.Text == "0" && btn.Text == ",") // очищаем textbox если там стоит 0 в начале
+            {
+                display.Text += btn.Text; // добавляем числа последовательно
+            }  
+            else
+                if (display.Text == "0" && (btn.Text == "1" || btn.Text == "2" || btn.Text == "3" || btn.Text == "4" || btn.Text == "5" || btn.Text == "6" || btn.Text == "7" || btn.Text == "8" || btn.Text == "9"))
                 display.Clear();
+            display.Text += btn.Text;*/
+
             Button btn = sender as Button;
-            display.Text += btn.Text; // добавляем числа последовательно
+            if (display.Text == "0")
+            {
+                display.Clear();
+                display.Text += btn.Text;
+            }
+               
+            else
+                display.Text += btn.Text;
+
         }
 
         private void operation_click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            if(calc.result != 0)
-            {
-
-            }
             calc.first_number = double.Parse(display.Text);//converting written string in textbox to double
             calc.operation = btn.Text;
-            //labelCurrentOperation.Text = calc.result + "" + calc.operation;
+            //label1.Text += display.Text;
             display.Text = ""; //ощищаем textbox
-            
+            //label1.Text = ""; 
         }
 
         private void result_click(object sender, EventArgs e)
         {
             calc.second_number = double.Parse(display.Text); //converting written string in textbox to double
             calc.calculate(); //вызываем метод/функцию calculate
-            display.Text = calc.result.ToString(); //converting double result to string
+            display.Text = calc.result.ToString(); //converting double result to string      
         }
 
         private void c_click(object sender, EventArgs e)
@@ -62,9 +74,6 @@ namespace Calculator
         }
         private void ce_click(object sender, EventArgs e)
         {
-            /*string s = display.Text;
-            s = s.Substring(s.Length - 1, s.Length - 1);
-            display.Text = s;*/
             display.Clear();
         }
 
@@ -75,7 +84,7 @@ namespace Calculator
 
         private void aboutProgramToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Calculator by Togzhan Abish.  Version 1.1   Microsoft Corporation, 2017. All rights reserved.", "About program");
+            MessageBox.Show("Calculator by Togzhan Abish. \nVersion 1.1   \nMicrosoft Corporation, 2017. \nAll rights reserved.", "About program");
         }
 
         private void button21_Click(object sender, EventArgs e) //Memory Save
@@ -102,5 +111,109 @@ namespace Calculator
         {
             memory = memory - double.Parse(display.Text);
         }
+
+        private void instructionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("MC- Memory Clear. \nMR - Memory Read. \nMS - Memory save. \nM+ - Memory += display.Text. \nM- -Memory -= display.Text.", "Instructions");
+        }
+
+        private void button27_Click(object sender, EventArgs e) // 1/x
+        {
+            if(display.Text != "")
+            {
+                double h = Convert.ToDouble("1") / Convert.ToDouble(display.Text);
+                display.Text = Convert.ToString(h);       
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void button26_Click(object sender, EventArgs e) // sqrt(x)
+        {
+            if (display.Text != "")
+            {
+                double k;
+                k = Convert.ToDouble(display.Text);
+                
+                display.Text = Convert.ToString(Math.Sqrt(k));
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void button25_Click(object sender, EventArgs e) // x^2
+        {
+            if (display.Text != "")
+            {
+                double x;
+                x = Convert.ToDouble(display.Text) * Convert.ToDouble(display.Text);
+                display.Text = Convert.ToString(x);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e) // %
+        {
+            if(display.Text != "")
+            {
+                double m;
+                m = Convert.ToDouble(display.Text) / Convert.ToDouble("100");
+                display.Text = Convert.ToString(m);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void button28_Click(object sender, EventArgs e) // backspace
+        {
+            if (display.Text != string.Empty)
+            {
+                int length = display.Text.Length;
+                if (length != 1)
+                {
+                    display.Text = display.Text.Remove(length - 1);
+                }
+                else
+                {
+                    display.Text = 0.ToString();
+                }
+
+            }
+        }
+
+        private void button29_Click(object sender, EventArgs e) // +/-
+        {
+            if(display.Text != "")
+            {
+                double c = Convert.ToDouble(this.display.Text);
+                c = -c;
+                display.Text = Convert.ToString(c);
+            }
+        }
+
+        private void scientificCalculatorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
+
+        private void button18_Click(object sender, EventArgs e) //,
+        {
+            if (display.Text == ",")
+                display.Text = "0,";
+
+            if (display.Text.IndexOf(",") == -1)
+                display.Text = display.Text + ",";          
+        }
     }
 }
+

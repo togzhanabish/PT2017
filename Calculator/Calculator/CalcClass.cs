@@ -18,7 +18,7 @@ namespace Calculator
             switch (operation)
             {
                 case "+":
-                    result = first_number + second_number;
+                    result = second_number + first_number;
                     break;
                 case "-":
                     result = first_number - second_number;

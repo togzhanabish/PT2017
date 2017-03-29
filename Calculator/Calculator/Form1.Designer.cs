@@ -60,7 +60,18 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutProgramToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.styleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.scientificCalculatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.button27 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -274,7 +285,7 @@
             this.button18.TabIndex = 18;
             this.button18.Text = ",";
             this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.numbers_click);
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // groupBox1
             // 
@@ -290,7 +301,7 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(5, 194);
+            this.groupBox1.Location = new System.Drawing.Point(5, 258);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(242, 288);
             this.groupBox1.TabIndex = 20;
@@ -306,7 +317,7 @@
             this.groupBox2.Controls.Add(this.button13);
             this.groupBox2.Controls.Add(this.button12);
             this.groupBox2.Controls.Add(this.button11);
-            this.groupBox2.Location = new System.Drawing.Point(253, 195);
+            this.groupBox2.Location = new System.Drawing.Point(253, 258);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(173, 287);
             this.groupBox2.TabIndex = 21;
@@ -399,7 +410,8 @@
             // aboutProgramToolStripMenuItem
             // 
             this.aboutProgramToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutProgramToolStripMenuItem1});
+            this.aboutProgramToolStripMenuItem1,
+            this.instructionsToolStripMenuItem});
             this.aboutProgramToolStripMenuItem.Name = "aboutProgramToolStripMenuItem";
             this.aboutProgramToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.aboutProgramToolStripMenuItem.Text = "Help";
@@ -411,10 +423,18 @@
             this.aboutProgramToolStripMenuItem1.Text = "About program";
             this.aboutProgramToolStripMenuItem1.Click += new System.EventHandler(this.aboutProgramToolStripMenuItem1_Click);
             // 
+            // instructionsToolStripMenuItem
+            // 
+            this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
+            this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.instructionsToolStripMenuItem.Text = "Instructions";
+            this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.instructionsToolStripMenuItem_Click);
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
+            this.viewToolStripMenuItem,
             this.aboutProgramToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -422,11 +442,118 @@
             this.menuStrip1.TabIndex = 28;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.styleToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // styleToolStripMenuItem
+            // 
+            this.styleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.scientificCalculatorToolStripMenuItem});
+            this.styleToolStripMenuItem.Name = "styleToolStripMenuItem";
+            this.styleToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.styleToolStripMenuItem.Text = "Style";
+            // 
+            // scientificCalculatorToolStripMenuItem
+            // 
+            this.scientificCalculatorToolStripMenuItem.Name = "scientificCalculatorToolStripMenuItem";
+            this.scientificCalculatorToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.scientificCalculatorToolStripMenuItem.Text = "Scientific Calculator";
+            this.scientificCalculatorToolStripMenuItem.Click += new System.EventHandler(this.scientificCalculatorToolStripMenuItem_Click);
+            // 
+            // button24
+            // 
+            this.button24.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button24.Location = new System.Drawing.Point(58, 194);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(56, 62);
+            this.button24.TabIndex = 29;
+            this.button24.Text = "%";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // button25
+            // 
+            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button25.ImageKey = "(none)";
+            this.button25.Location = new System.Drawing.Point(182, 194);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(72, 62);
+            this.button25.TabIndex = 30;
+            this.button25.Text = "x^2";
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // button26
+            // 
+            this.button26.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button26.Location = new System.Drawing.Point(260, 194);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(92, 62);
+            this.button26.TabIndex = 31;
+            this.button26.Text = "√x";
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Click += new System.EventHandler(this.button26_Click);
+            // 
+            // button27
+            // 
+            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button27.Location = new System.Drawing.Point(358, 194);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(62, 62);
+            this.button27.TabIndex = 32;
+            this.button27.Text = "1⁄x";
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
+            // 
+            // button28
+            // 
+            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button28.Location = new System.Drawing.Point(5, 194);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(47, 62);
+            this.button28.TabIndex = 19;
+            this.button28.Text = "BSP";
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
+            // 
+            // button29
+            // 
+            this.button29.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button29.Location = new System.Drawing.Point(120, 194);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(56, 62);
+            this.button29.TabIndex = 33;
+            this.button29.Text = "±";
+            this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(5, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 24);
+            this.label1.TabIndex = 34;
+            this.label1.Click += new System.EventHandler(this.operation_click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 488);
+            this.ClientSize = new System.Drawing.Size(432, 549);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button29);
+            this.Controls.Add(this.button28);
+            this.Controls.Add(this.button27);
+            this.Controls.Add(this.button26);
+            this.Controls.Add(this.button25);
+            this.Controls.Add(this.button24);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -480,6 +607,17 @@
         private System.Windows.Forms.ToolStripMenuItem aboutProgramToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutProgramToolStripMenuItem1;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem styleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem scientificCalculatorToolStripMenuItem;
     }
 }
 
