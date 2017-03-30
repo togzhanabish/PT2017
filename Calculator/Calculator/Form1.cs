@@ -14,6 +14,7 @@ namespace Calculator
     public partial class Form1 : Form
     {
         double memory = 0;
+        double cnt = 0;
 
         CalcClass calc = new CalcClass();
 
@@ -58,9 +59,19 @@ namespace Calculator
 
         private void result_click(object sender, EventArgs e)
         {
-            calc.second_number = double.Parse(display.Text); //converting written string in textbox to double
-            calc.calculate(); //вызываем метод/функцию calculate
-            display.Text = calc.result.ToString(); //converting double result to string      
+            cnt++;
+            if(cnt == 1)
+            {
+                calc.second_number = double.Parse(display.Text); //converting written string in textbox to double
+                calc.calculate(); //вызываем метод/функцию calculate
+                display.Text = calc.result.ToString(); //converting double result to string
+                
+            }
+            else
+            {
+
+            }
+                 
         }
 
         private void c_click(object sender, EventArgs e)
@@ -132,7 +143,7 @@ namespace Calculator
 
         private void button26_Click(object sender, EventArgs e) // sqrt(x)
         {
-            if (display.Text != "")
+            if (display.Text != "" && Convert.ToDouble(display.Text) > 0)
             {
                 double k;
                 k = Convert.ToDouble(display.Text);
@@ -141,7 +152,7 @@ namespace Calculator
             }
             else
             {
-                return;
+                label1.Text = "ERROR!";
             }
         }
 
@@ -197,6 +208,10 @@ namespace Calculator
                 double c = Convert.ToDouble(this.display.Text);
                 c = -c;
                 display.Text = Convert.ToString(c);
+            }
+            else
+            {
+                return;
             }
         }
 

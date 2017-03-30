@@ -99,11 +99,13 @@ namespace Calculator
 
         private void button13_Click(object sender, EventArgs e) // |x|
         {
-            if(display.Text != "")
+            /*if(display.Text != "")
             {
                 double b = Convert.ToDouble(display.Text);
+                b = -(-b);
+                display.Text = Convert.ToString(b);
                 
-            }
+            }*/
         }
 
         private void button15_Click(object sender, EventArgs e) // x^2
@@ -125,11 +127,11 @@ namespace Calculator
             if (display.Text != "")
             {
                 double f = 1;
-
-                for (int i = 0; i <= Convert.ToDouble(display.Text); i++)
-                    f *= Convert.ToDouble(i);
-
-                
+                for(int i = 0; i <= Convert.ToDouble(display.Text); i++)
+                {
+                    f *= Convert.ToDouble(display.Text);
+                }
+                display.Text = Convert.ToString(f);
             }
             else
             {
@@ -141,9 +143,7 @@ namespace Calculator
         {
             if (display.Text != "")
             {
-                double y;
-                y = Math.Pow(Convert.ToDouble(calc.first_number), Convert.ToDouble(calc.second_number));
-                display.Text = Convert.ToString(y);
+                
             }
             else
             {
@@ -169,18 +169,32 @@ namespace Calculator
             if(display.Text != "")
             {
                 double l = Convert.ToDouble(display.Text);
-                
+                display.Text = Convert.ToString(Math.Pow(l, 3.0));
             }
         }
 
         private void button10_Click(object sender, EventArgs e) // 2^x
         {
-
+            if(display.Text != "")
+            {
+                double t;
+                t = Convert.ToDouble(display.Text);
+                display.Text = Convert.ToString(Math.Pow(2, t));
+            }
         }
 
         private void button9_Click(object sender, EventArgs e) // ∛x
         {
-
+            if (display.Text != "")
+            {
+                double z;
+                z = Convert.ToDouble(display.Text);
+                display.Text = Convert.ToString(Math.Pow(z, 1.0/3.0));
+            }
+            else
+            {
+                return;
+            }
         }
 
         private void button8_Click(object sender, EventArgs e) // √x
@@ -199,17 +213,23 @@ namespace Calculator
 
         private void button7_Click(object sender, EventArgs e) // sin
         {
-
+            double sinn = Convert.ToDouble(display.Text);
+            sinn = Math.Sin(calc.first_number * Math.PI / 180);
+            display.Text = Convert.ToString(sinn);
         }
 
         private void button6_Click(object sender, EventArgs e) // cos
         {
-
+            double coss = Convert.ToDouble(display.Text);
+            coss = Math.Cos(calc.first_number * Math.PI / 180);
+            display.Text = Convert.ToString(coss);
         }
 
         private void button5_Click(object sender, EventArgs e) // tg
         {
-
+            double tgg = Convert.ToDouble(display.Text);
+            tgg = Math.Tan(calc.first_number * Math.PI / 180);
+            display.Text = Convert.ToString(tgg);
         }
 
         private void button4_Click(object sender, EventArgs e) // %

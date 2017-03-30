@@ -12,7 +12,7 @@ namespace Calculator
         public double second_number;
         public double result;
         public string operation;
-        
+       
         public void calculate()
         {
             switch (operation)
@@ -28,6 +28,8 @@ namespace Calculator
                     break;
                 case "/":
                     result = first_number / second_number;
+                    break;
+                default:
                     break;
             }
         }
