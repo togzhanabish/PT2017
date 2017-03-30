@@ -640,6 +640,7 @@
             this.Controls.Add(this.display);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Click += new System.EventHandler(this.result_click);
             this.groupBox1.ResumeLayout(false);
