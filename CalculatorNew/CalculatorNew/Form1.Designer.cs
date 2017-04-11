@@ -430,7 +430,7 @@
             this.button34.TabIndex = 7;
             this.button34.Text = "ln";
             this.button34.UseVisualStyleBackColor = true;
-            this.button34.Click += new System.EventHandler(this.button34_Click);
+            this.button34.Click += new System.EventHandler(this.OnlyOnce_click);
             // 
             // button35
             // 
@@ -440,6 +440,7 @@
             this.button35.TabIndex = 6;
             this.button35.Text = "sin";
             this.button35.UseVisualStyleBackColor = true;
+            this.button35.Click += new System.EventHandler(this.OnlyOnce_click);
             // 
             // button39
             // 
@@ -459,7 +460,7 @@
             this.button40.TabIndex = 11;
             this.button40.Text = "log";
             this.button40.UseVisualStyleBackColor = true;
-            this.button40.Click += new System.EventHandler(this.button40_Click);
+            this.button40.Click += new System.EventHandler(this.OnlyOnce_click);
             // 
             // button44
             // 
@@ -529,6 +530,7 @@
             this.button59.TabIndex = 32;
             this.button59.Text = "cos";
             this.button59.UseVisualStyleBackColor = true;
+            this.button59.Click += new System.EventHandler(this.OnlyOnce_click);
             // 
             // button60
             // 
@@ -538,6 +540,7 @@
             this.button60.TabIndex = 31;
             this.button60.Text = "tg";
             this.button60.UseVisualStyleBackColor = true;
+            this.button60.Click += new System.EventHandler(this.OnlyOnce_click);
             // 
             // groupBox2
             // 
@@ -568,7 +571,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(372, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(251, 24);
             this.menuStrip1.TabIndex = 34;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -638,7 +641,7 @@
             this.display.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.display.Location = new System.Drawing.Point(7, 48);
             this.display.Name = "display";
-            this.display.Size = new System.Drawing.Size(359, 34);
+            this.display.Size = new System.Drawing.Size(240, 34);
             this.display.TabIndex = 35;
             this.display.Text = "0";
             this.display.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -655,15 +658,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 383);
+            this.ClientSize = new System.Drawing.Size(251, 383);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.display);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculator";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);

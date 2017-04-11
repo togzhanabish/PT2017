@@ -201,7 +201,7 @@ namespace CalculatorNew
 
         private void button11_Click(object sender, EventArgs e) // backspace
         {
-            if (display.Text != string.Empty)
+            if (display.Text != "")
             {
                 
                 if (display.Text.Length != 1)
@@ -232,7 +232,7 @@ namespace CalculatorNew
 
 
 
-        private void button40_Click(object sender, EventArgs e) // log
+        /*private void button40_Click(object sender, EventArgs e) // log
         {
             if (display.Text != "")
             {
@@ -261,12 +261,12 @@ namespace CalculatorNew
             {
                 return;
             }
-        }
+        }*/
 
         private void OnlyOnce_click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            calc.first_number = double.Parse(display.Text);
+            calc.first_number = Convert.ToDouble(display.Text);
             calc.operation = btn.Text;
             calc.Calc1();
             if (calc.error)

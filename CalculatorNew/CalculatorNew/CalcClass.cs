@@ -121,7 +121,7 @@ namespace CalculatorNew
                     }
                     result = 1 / first_number;
                     break;
-                case "x^2":
+                case "X^2":
                     result = Math.Pow(first_number, 2);
                     break;
                 case "x^3":
@@ -133,7 +133,7 @@ namespace CalculatorNew
                 case "cos":
                     result = Math.Cos((first_number * Math.PI) / 180);
                     break;
-                case "tan":
+                case "tg":
                     result = Math.Tan((first_number * Math.PI) / 180);
                     break;
                 case "√":
@@ -155,7 +155,7 @@ namespace CalculatorNew
                     {
                         error = true;
                     }
-                    result = Math.Pow(first_number, 1 / 3);
+                    result = Math.Pow(first_number, 1.0 / 3.0);
                     break;
                 case "10^x":
                     if (first_number < 0)
@@ -163,6 +163,20 @@ namespace CalculatorNew
                         result = Math.Pow((Math.Pow(10, first_number)), 1/first_number);
                     }
                     result = Math.Pow(10, first_number);
+                    break;
+                case "log":
+                    if(first_number < 0)
+                    {
+                        error = true;
+                    }
+                    result = Math.Log10(first_number);
+                    break;
+                case "ln":
+                    if(first_number < 0)
+                    {
+                        error = true;
+                    }
+                    result = Math.Log(first_number);
                     break;
             }
         }
